@@ -1,0 +1,239 @@
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Blue200: hsl(224, 100%, 95%);
+    --Blue400: hsl(220, 100%, 64%);
+    --Blue600: hsl(228, 100%, 60%);
+    --Blue700: hsl(228, 99%, 58%);
+    /* — used at 25% opacity for the menu overlay */
+    --Black: hsl(0, 0%, 0%)
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+font-family: "Public Sans", sans-serif;
+    background-color: var(--Blue600);
+    color: var(--White);
+    
+}
+
+/* .public-sans-<uniquifier> {
+    
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+} */
+.grid {
+    display: grid;
+    grid-template-areas: 'nav nav nav nav nav nav nav nav nav nav nav nav'
+        'hero hero hero hero hero stats stats stats stats stats stats stats'
+        'footer footer footer footer footer footer footer footer footer footer footer footer';
+    grid-template-rows: 50px 400px 50px;
+}
+
+@media (max-width:768px) {
+    .grid {
+        grid-template-areas: 'nav''hero''stats''footer';
+        grid-template-rows: 50px 350px
+    }
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--White);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.logo {
+    position: relative;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--White);
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 -12px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--White);
+}
+
+.menu {
+    cursor: pointer;
+}
+
+.nav-links {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: fixed;
+    width: 0;
+    height: 0;
+    min-height: 0;
+    top: 0;
+    right: 0;
+    background-color: var(--Blue700);
+    transition: .2s;
+}
+
+.nav-links.show {
+    height: 100%;
+    width: 50%;
+}
+
+@media (max-width:768px) {
+    .nav-links.show {
+        width: 100%;
+        height: 50%;
+    }
+}
+
+.nav-links li {
+    font-size: 2rem;
+    transition: .2s;
+    cursor: pointer;
+    padding: 1rem;
+    width: fit-content;
+}
+
+@media (max-width:768px) {
+    .nav-links li {
+        font-size: 1rem;
+        padding: .5rem;
+    }
+
+    .close {
+        width: 40px !important;
+    }
+}
+
+.nav-links li:hover {
+    border-bottom: 1px solid #fff;
+}
+
+.close {
+    width: 60px;
+    max-width: 100%;
+    cursor: pointer;
+    position: relative;
+    left: 83%;
+    top: 3%;
+}
+
+/* Start Hero */
+.hero {
+    grid-area: hero;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--Blue200);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.text {
+    max-width: 100%;
+}
+
+.text h1 {
+    font-size: 2rem;
+}
+
+.text p {
+    color: var(--Blue200);
+    font-weight: 100
+}
+
+/* End Hero */
+/* Stats */
+.stats {
+    grid-area: stats;
+
+}
+
+.stats-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width:768px) {
+    .stats-wrapper {
+        grid-template-columns: 1fr
+    }
+}
+
+.stats-box {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    border-right: 1px solid #FFF;
+    /* border-bottom: 1px solid #fff; */
+
+}
+
+@media (max-width:768px) {
+    .stats-box {
+        border-top: 1px solid var(--White);
+    }
+}
+
+.stats-box:nth-child(3),
+.stats-box:nth-child(4) {
+    border-top: 1px solid #FFF;
+    border-right: 1px solid #FFF;
+}
+
+.stats-box .nums {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stats-box .nums img {
+    max-width: 100%;
+}
+
+.stats-box .stats-text h3 {
+    margin: 0;
+}
+
+.stats-box .stats-text p {
+    margin: 0;
+    font-weight: 100;
+    font-size: 14px;
+    color: var(--Blue200);
+}
+
+/* Stats //  */
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #Fff;
+    padding-inline: 1rem;
+    padding: 1rem;
+}
+
+@media (max-width:768px) {
+    footer {
+        flex-direction: column;
+    }
+}
