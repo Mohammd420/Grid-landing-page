@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Public+Sans:wght@100..900&display=swap"
+    rel="stylesheet">
+  <title>Grid landing page</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="grid">
+    <!-- Start Nav -->
+    <nav>
+      <div class="logo">
+        <a href="#">Bridge Collective</a>
+      </div>
+      <img src="assets/images/icon-menu.svg" alt="Menu " class="menu">
+      <ul class="nav-links">
+        <img src="assets/images/icon-close.svg" alt="icon-close" class="close">
+        <li>About</li>
+        <li>Our Work</li>
+        <li>Partners</li>
+        <li>Annual Report</li>
+        <li>Donate</li>
+      </ul>
+    </nav>
+    <!-- End Nav -->
+    <!-- Start Hero -->
+    <section class="hero">
+      <div class="text">
+        <h1>A classroom for every child.</h1>
+        <p>
+          We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a
+          graduate
+          tomorrow.
+        </p>
+      </div>
+    </section>
+    <!-- End Hero -->
+    <!-- Start Sats -->
+    <section class="stats">
+      <div class="stats-wrapper">
+        <div class="stats-box">
+          <div class="nums">
+            <img src="assets/images/icon-arrow-right.svg" alt="">
+            <h3>2.4M</h3>
+          </div>
+          <div class="stats-text">
+            <h3>Students reached</h3>
+            <p>
+              Across 31 countries since 2011.
+            </p>
+          </div>
+        </div>
+        <div class="stats-box">
+          <div class="nums">
+            <img src="assets/images/icon-plus.svg" alt="">
+            <h3>2.4M</h3>
+          </div>
+          <div class="stats-text">
+            <h3>Students reached</h3>
+            <p>
+              Across 31 countries since 2011.
+            </p>
+          </div>
+        </div>
+        <div class="stats-box">
+          <div class="nums">
+            <img src="assets/images/icon-sparkle.svg" alt="">
+            <h3>38K</h3>
+          </div>
+          <div class="stats-text">
+            <h3>Teachers trained</h3>
+            <p>
+              Equipped with modern tools and methodology.
+            </p>
+          </div>
+        </div>
+        <div class="stats-box">
+          <div class="nums">
+            <img src="assets/images/icon-trending-up.svg" alt="">
+            <h3>1,284</h3>
+          </div>
+          <div class="stats-text">
+            <h3>Schools partnered</h3>
+            <p>
+              In 14 countries, from Kenya to Guatemala.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Sats -->
+    <!-- Footer -->
+    <footer>
+      <div class="copyright">
+        © 2026 Bridge Collective
+      </div>
+      <div>
+        Registered charity 12345678
+      </div>
+    </footer>
+    <!-- End Footer -->
+  </div>
+  <script>
+    const nav = document.querySelector('.nav-links');
+    const menu = document.querySelector('.menu');
+    const closeBtn = document.querySelector('.close');
+
+    menu.addEventListener('click', () => {
+      nav.classList.add('show');
+    })
+
+    closeBtn.addEventListener('click', () => {
+      nav.classList.remove('show');
+    })
+  </script>
+</body>
+
+</html>
